@@ -29,8 +29,10 @@ spec:
         command:
         - npm start
         env:
-        - name: "DB_NAME"
-          value: "WORLD"
+        - name: "PORT"
+          value: "8080"
+        - name: "NAME"
+          value: "TEST"
         - name: "RETHINKDB"
           value: "rethinkdb"
         - name: "RETHINKDB_PORT"

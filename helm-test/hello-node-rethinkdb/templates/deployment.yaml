@@ -32,7 +32,7 @@ spec:
         - name: "PORT"
           value: "8080"
         - name: "NAME"
-          value: "HELLO_WORLD_1"
+          value: "TEST_BUILD_2"
         - name: "RETHINKDB"
           value: "rethinkdb"
         - name: "RETHINKDB_PORT"

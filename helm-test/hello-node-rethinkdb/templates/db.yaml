@@ -1,0 +1,43 @@
+{{- $serviceName := include "fullname" . -}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    db: rethinkdb
+  name: rethinkdb
+spec:
+  type: NodePort
+  ports:
+    - port: 28015
+      targetPort: driver
+  selector:
+    db: rethinkdb
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    db: rethinkdb
+  name: rethinkdb
+spec:
+  template:
+    metadata:
+      labels:
+        db: rethinkdb
+    spec:
+      securityContext:
+        runAsUser: 0
+      containers:
+      - image: rethinkdb:2.3
+        command:
+        - rethinkdb
+        args:
+        - "--bind"
+        - "all"
+        name: rethinkdb
+        ports:
+        - containerPort: 8080
+          name: admin
+        - containerPort: 28015
+          name: driver

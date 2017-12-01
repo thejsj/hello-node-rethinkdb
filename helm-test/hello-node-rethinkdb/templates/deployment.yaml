@@ -27,12 +27,14 @@ spec:
         - name: port-8080
           containerPort: 8080
         command:
-        - npm start
+        - npm
+        args:
+        - start
         env:
         - name: "PORT"
           value: "8080"
         - name: "NAME"
-          value: "TEST_BUILD_2"
+          value: "WOWOWOWOW1"
         - name: "RETHINKDB"
           value: "rethinkdb"
         - name: "RETHINKDB_PORT"

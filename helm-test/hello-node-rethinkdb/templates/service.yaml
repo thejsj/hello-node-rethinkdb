@@ -8,9 +8,6 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
     service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "True"
-{{- if not .Values.service.public }}
-    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
-{{- end}}
 {{- end }}
   name: {{ $serviceName }}
   labels:

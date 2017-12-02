@@ -4,38 +4,38 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    db: rethinkdb
-  name: rethinkdb
+    db: rethinkdb-hello-node-rethinkdb
+  name: rethinkdb-hello-node-rethinkdb
 spec:
   type: NodePort
   ports:
     - port: 28015
       targetPort: driver
   selector:
-    db: rethinkdb
+    db: rethinkdb-hello-node-rethinkdb
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    db: rethinkdb
-  name: rethinkdb
+    db: rethinkdb-hello-node-rethinkdb
+  name: rethinkdb-hello-node-rethinkdb
 spec:
   template:
     metadata:
       labels:
-        db: rethinkdb
+        db: rethinkdb-hello-node-rethinkdb
     spec:
       securityContext:
         runAsUser: 0
       containers:
       - image: rethinkdb:2.3
         command:
-        - rethinkdb
+        - rethinkdb-hello-node-rethinkdb
         args:
         - "--bind"
         - "all"
-        name: rethinkdb
+        name: rethinkdb-hello-node-rethinkdb
         ports:
         - containerPort: 8080
           name: admin

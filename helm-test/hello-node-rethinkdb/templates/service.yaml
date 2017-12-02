@@ -25,7 +25,7 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    name: port-8080
-    targetPort: port-8080
+    name: port-8000
+    targetPort: port-8000
   selector:
     app: {{ $serviceName }}

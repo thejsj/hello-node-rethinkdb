@@ -34,7 +34,7 @@ spec:
         - name: "PORT"
           value: "8080"
         - name: "NAME"
-          value: "WOWOWOWOW1"
+          value: "HELLO-WORLD"
         - name: "RETHINKDB"
           value: "rethinkdb-hello-node-rethinkdb"
         - name: "RETHINKDB_PORT"

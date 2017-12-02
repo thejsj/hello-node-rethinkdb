@@ -6,7 +6,7 @@ FROM node:latest
 ENV DB_NAME=WORLD
 
 #Start: Packages
-RUN apt-get update -y && apt-get install -y vim
+RUN apt-get update -y && apt-get install -y curl
 #End
 
 #Start: Main Repository

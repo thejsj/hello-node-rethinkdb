@@ -21,6 +21,8 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ template "image-name" . }}"
         imagePullPolicy: {{.Values.image.pullPolicy}}
+        securityContext:
+          runAsUser: 0
         resources:
 {{ toYaml .Values.resources | indent 12 }}
         ports:

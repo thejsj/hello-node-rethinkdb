@@ -26,17 +26,17 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 12 }}
         ports:
-        - name: port-8000
-          containerPort: 8000
+        - name: port-8080
+          containerPort: 8080
         command:
         - npm
         args:
         - start
         env:
         - name: "PORT"
-          value: "8000"
+          value: "8080"
         - name: "NAME"
-          value: "MINERVA_TEST"
+          value: "HELLO-WORLD"
         - name: "RETHINKDB"
           value: "rethinkdb-hello-node-rethinkdb"
         - name: "RETHINKDB_PORT"
